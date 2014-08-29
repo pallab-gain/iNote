@@ -32,16 +32,16 @@ Thing.find({}).remove(function () {
 });
 Tag.find({}).remove(function () {
     Tag.create({
-        name: 'Development Tools'
+        url: 'Development Tools'
     }, {
-        name: 'Server and Client integration'
+        url: 'Server and Client integration'
     }, {
-        name: 'Smart Build System'
+        url: 'Smart Build System'
     }, {
-        name: 'Modular Structure'
+        url: 'Modular Structure'
     }, {
-        name: 'Optimized Build'
+        url: 'Optimized Build'
     }, {
-        name: 'Deployment Ready'
+        url: 'Deployment Ready'
     });
 });
