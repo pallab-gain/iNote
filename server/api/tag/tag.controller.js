@@ -39,10 +39,10 @@ exports.show = function (req, res) {
 // Creates a new tag in the DB.
 exports.create = function (req, res) {
     var tag = undefined;
-    if (!_.isUndefined(req.body.url)) {
-        slug(req.body.url, function (data) {
+    if (!_.isUndefined(req.body.name)) {
+        slug(req.body.name, function (data) {
             tag = {
-                url: req.body.url,
+                name: req.body.name,
                 slug: data
             }
             Tag.create(tag, function (err, tag) {
@@ -53,7 +53,7 @@ exports.create = function (req, res) {
             });
         });
     } else {
-        return handleError(res, "Provide a link");
+        return handleError(res, "Provide a tag name");
     }
 };
 
