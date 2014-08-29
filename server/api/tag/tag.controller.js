@@ -38,7 +38,6 @@ exports.show = function (req, res) {
 
 // Creates a new tag in the DB.
 exports.create = function (req, res) {
-    console.log(req.body);
     var tag = undefined;
     if (!_.isUndefined(req.body.url)) {
         slug(req.body.url, function (data) {
