@@ -29,10 +29,10 @@ exports.show = function (req, res) {
 
 // Creates a new link in the DB.
 exports.create = function (req, res) {
-    var link = undefined;
+    var url = undefined;
     if (!_.isUndefined(req.body.url)) {
-        link = {url: req.body.url};
-        Link.create(link, function (err, link) {
+        url = {url: req.body.url};
+        Link.create(url, function (err, link) {
             if (err) {
                 return handleError(res, err);
             }
