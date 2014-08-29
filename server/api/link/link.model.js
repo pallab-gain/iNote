@@ -3,11 +3,10 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var TagSchema = new Schema({
+var LinkSchema = new Schema({
     _id: Number,
-    name: String,
-    slug: String,
+    url: String,
     date: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Tag', TagSchema);
+module.exports = mongoose.model('Link', LinkSchema);
