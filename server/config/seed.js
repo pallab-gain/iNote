@@ -7,6 +7,8 @@
 
 var Thing = require('../api/thing/thing.model');
 var Tag = require('../api/tag/tag.model');
+var Link = require('../api/link/link.model');
+var Note = require('../api/note/note.model');
 
 
 Thing.find({}).remove(function () {
@@ -43,5 +45,15 @@ Tag.find({}).remove(function () {
         name: 'Optimized Build'
     }, {
         name: 'Deployment Ready'
+    });
+});
+
+Note.find({}).remove(function () {
+    Link.findOne({ url: "www.hgh.com"}, function (err, link) {
+        console.log(' Link ', link);
+        Note.create({
+            description: "Sample Notes",
+            links: [ link._id ]
+        });
     });
 });
